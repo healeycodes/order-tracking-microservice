@@ -1,0 +1,60 @@
+body, html {
+    font-family: 'Fredoka One', cursive;
+    height: 100%;
+    display: grid;
+}
+
+.card-con {
+    margin: auto;
+}
+
+.card-grid {
+    display: flex;
+}
+
+@media (max-width: 1170px) {
+    .card-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+.card {
+    height: 200px;
+    width: 200px;
+    border: 5px solid;
+    border-radius: 5px;
+    margin: 10px;
+}
+
+.card-header {
+    text-align: center;
+    font-size: 26px;
+    border-bottom: 5px solid;
+    border-color: inherit;
+    padding: 5px 10px;
+    background: #FFF;
+}
+
+.card-main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+}
+
+.default {
+    color: #4545ce;
+    border-color: #9A9AEF;
+    background-color: #EEEBFF;
+    border-bottom-color: #9A9AEF;
+}
+
+/* The step in progress */
+.current {
+    color: #d44b4b;
+    border-color: #EF9A9A;
+    background-color: #FFEBEE;
+    border-bottom-color: #EF9A9A;
+}
