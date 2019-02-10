@@ -7,9 +7,13 @@
     "express": "^4.16.4",
     "firebase-admin": "^7.0.0"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "mocha": "^5.2.0",
+    "supertest": "^3.4.2"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node app.js",
+    "test": "mocha test/apiTest.js --exit"
   },
   "repository": {
     "type": "git",

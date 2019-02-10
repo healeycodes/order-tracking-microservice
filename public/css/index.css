@@ -2,6 +2,7 @@ body, html {
     font-family: 'Fredoka One', cursive;
     height: 100%;
     display: grid;
+    margin: 0;
 }
 
 .card-con {
@@ -57,4 +58,19 @@ body, html {
     border-color: #EF9A9A;
     background-color: #FFEBEE;
     border-bottom-color: #EF9A9A;
+}
+
+#dev {
+    display: none; /* Enable with devMode flag in index.js */
+    font-family: 'Source Code Pro', monospace;
+    position: fixed;
+    height: 150px;
+    width: 300px;
+    left: 0;
+    right: 0;
+    bottom: 20px;
+    margin: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+    text-align: center;
+    color: #FFF;
 }

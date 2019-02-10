@@ -1,6 +1,6 @@
 /* Firebase */
 const admin = require('firebase-admin');
-const serviceAccount = require('./serviceAccountKey.json');
+const serviceAccount = require('./serviceAccountKey.json'); // .gitignore
 admin.initializeApp({
     credential: admin.credential.cert(serviceAccount),
     databaseURL: 'https://bominos-ccaaa.firebaseio.com'
@@ -17,52 +17,59 @@ app.use(express.json());
 const uuidv4 = require('uuid/v4');
 
 // Create a tracking instance
-app.put('/private/orders', (req, res) => {
+app.get('/private/orders', (req, res) => {
     const orderId = uuidv4();
     db.ref(`orders/${orderId}`).set({
         started: Date.now(),
-        stage: 0 // Integer: 1-5 inclusive
-    }, (err) => {
-        if (err) {
+        // Integer: 1-5 inclusive
+        stage: 1
+    })
+        .then(() => {
+            return res.send(orderId);
+        })
+        .catch((err) => {
             console.error(`Error creating tracking instance: ${err}`);
             return res.status(500).send('Server error');
-        } else {
-            return res.send(orderId);
-        }
-    })
+        })
 });
 
 // Set a tracking instance's state
 app.post('/private/orders', (req, res) => {
     db.ref('orders').child(req.body.orderId).set({
-        stage: req.body.stage
-    }, (err) => {
-        if (err) {
+        // Clamp stage
+        stage: Math.max(1, Math.min(5, req.body.stage))
+    })
+        .then(() => {
+            return res.send('OK');
+        })
+        .catch((err) => {
             console.error(`Error setting tracking instance state: ${err}`);
             return res.status(500).send('Server error');
-        } else {
-            return res.send('OK');
-        }
-    })
+        })
 });
 
 // Client access to a tracking insance
 app.get('/public/orders/:orderId', (req, res) => {
-    db.ref(`orders/${req.params.orderId}`)
+    const orderId = req.params.orderId;
+    db.ref(`orders/${orderId}`)
         .once('value')
         .then(data => {
-            if (data.val()) {
-                return res.send(instance);
+            order = data.val();
+            if (order !== null) {
+                return res.send(order);
             } else {
                 console.error(`Unknown tracking instance requested.`);
                 return res.status(500).send('Server error');
             }
         })
+        .catch((err) => console.error(`Order: ${orderId} errored: ${err}`));
 });
 
 if (module === require.main) {
-    const PORT = process.env.PORT || 3000;
+    const PORT = process.env.PORT || 80;
     server.listen(PORT, () => {
         console.log(`App listening on port ${PORT}`);
     });
+} else {
+    module.exports = app;
 }
