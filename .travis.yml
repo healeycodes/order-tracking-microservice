@@ -1,5 +1,6 @@
 language: node_js
 node_js:
-  - "node"
+- node
 before_install:
-  - openssl aes-256-cbc -K $encrypted_4e050ef4b187_key -iv $encrypted_4e050ef4b187_iv -in serviceAccountKey.json.enc -out .\\serviceAccountKey.json -d
+- openssl aes-256-cbc -K $encrypted_4e050ef4b187_key -iv $encrypted_4e050ef4b187_iv
+  -in serviceAccountKey.json.enc -out .\\serviceAccountKey.json -d
