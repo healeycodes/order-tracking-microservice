@@ -1,6 +1,6 @@
 /* Firebase */
 const admin = require('firebase-admin');
-const serviceAccount = require('./serviceAccountKey.json'); // .gitignore
+const serviceAccount = require('./serviceAccountKey.json'); // .gitignored
 admin.initializeApp({
     credential: admin.credential.cert(serviceAccount),
     databaseURL: 'https://bominos-ccaaa.firebaseio.com'
