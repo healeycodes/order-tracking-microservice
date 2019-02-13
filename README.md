@@ -1,6 +1,6 @@
 [![Build Status](https://travis-ci.org/healeycodes/order-tracking-microservice.svg?branch=master)](https://travis-ci.org/healeycodes/order-tracking-microservice)
 
-## Order Tracking Microservice
+## Order Tracking Microservice :hamburger::fries::beer:
 
 Node/Express/Firebase microservice for sending users a delivery tracking page.
 
