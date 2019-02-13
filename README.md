@@ -2,7 +2,7 @@
 
 ## Order Tracking Microservice :hamburger::fries::beer:
 
-Node/Express/Firebase microservice for sending users a delivery tracking page.
+Node/Express/Firebase microservice for sending users an auto-updating delivery tracking page.
 
 - Vanilla JS
 - Mobile first
