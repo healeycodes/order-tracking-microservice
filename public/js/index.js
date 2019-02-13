@@ -1,10 +1,7 @@
-window.orderTracking = {};
-
 // The query parameter `orderId` lets us provide order tracking
 window.orderId = new URLSearchParams(window.location.search).get('orderId');
 
-/* While we are not at the end stage, check for new information every X seconds,
-   if information is new, apply it */
+// If delivery in progress, check for new information every X seconds
 window.localStage = null; // Integer: 1-5 inclusive
 const checkStage = () => {
     fetch(`/public/orders/${window.orderId}`)
@@ -18,8 +15,8 @@ const checkStage = () => {
     }
 }
 
-// Apply a given stage to the UI
 const stages = document.querySelectorAll('.card');
+// Apply a given stage to the UI
 const applyStage = (stage) => {
     window.localStage = stage;
     document.querySelectorAll('.current').forEach(div => div.classList.remove('current'));
