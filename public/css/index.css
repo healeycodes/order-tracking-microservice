@@ -18,6 +18,11 @@ body, html {
         flex-direction: column;
         align-items: center;
     }
+
+    .card-con {
+        margin-top: 10%;
+        margin-top: 10%;
+    }
 }
 
 .card {
