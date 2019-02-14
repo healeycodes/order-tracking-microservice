@@ -58,7 +58,7 @@ app.get('/public/orders/:orderId', (req, res) => {
             if (order !== null) {
                 return res.send(order);
             } else {
-                console.error(`Unknown tracking instance requested.`);
+                console.error(`Unknown tracking instance requested: ${orderId}.`);
                 return res.status(500).send('Server error');
             }
         })
@@ -68,7 +68,7 @@ app.get('/public/orders/:orderId', (req, res) => {
 if (module === require.main) {
     const PORT = process.env.PORT || 80;
     server.listen(PORT, () => {
-        console.log(`App listening on port ${PORT}`);
+        console.log(`App listening on port: ${PORT}`);
     });
 } else {
     module.exports = app;
