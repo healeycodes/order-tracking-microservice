@@ -34,7 +34,7 @@ Send that user to `/?orderId=261df5c4-9d57-4d87-9323-fb995faa6cd5`
 Set their order's stage:
 ```
 PUT: /private/orders
-body: {
+{
   orderId: 261df5c4-9d57-4d87-9323-fb995faa6cd5,
   stage: /* 1-5 */
 }
