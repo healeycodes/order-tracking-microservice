@@ -43,7 +43,7 @@ PUT: /private/orders
 
 <br>
 
-Deliver their piping hot food!
+Their tracking page will update without a refresh.
 
 <br>
 
