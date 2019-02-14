@@ -2,7 +2,7 @@
 
 ## Order Tracking Microservice :hamburger::fries::beer:
 
-Node/Express/Firebase microservice for sending users a delivery tracking page.
+Node/Express/Firebase microservice for sending users an auto-updating delivery tracking page.
 
 - Vanilla JS
 - Mobile first
@@ -11,11 +11,13 @@ Node/Express/Firebase microservice for sending users a delivery tracking page.
 
 <br>
 
-UI autoupdates as the order's delivery stage is changed.
+### UI
 
 ![Desktop](https://github.com/healeycodes/order-tracking-microservice/blob/master/preview.png)
 
 <br>
+
+### Workflow
 
 Create an order and get its ID:
 ```
@@ -32,7 +34,7 @@ Send that user to `/?orderId=261df5c4-9d57-4d87-9323-fb995faa6cd5`
 Set their order's stage:
 ```
 PUT: /private/orders
-body: {
+{
   orderId: 261df5c4-9d57-4d87-9323-fb995faa6cd5,
   stage: /* 1-5 */
 }
