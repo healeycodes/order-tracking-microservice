@@ -2,7 +2,7 @@
 
 ## Order Tracking Microservice :hamburger::fries::beer:
 
-Node/Express/Firebase microservice for sending users an auto-updating delivery tracking page.
+Node/Express/Firebase microservice for sending users an auto-updating delivery tracking page, controlled via RESTful API.
 
 - Vanilla JS
 - Mobile first
@@ -59,13 +59,17 @@ Their tracking page will update without a refresh.
 
 ### Test
 
-`env:DB='https://your-firebase-test-db.firebaseio.com'`
+`$env:KEY='./path_to_serviceAccount.json'`
+
+`$env:DB='https://your-firebase-test-db.firebaseio.com'`
 
 `npm test`
 
 ### Run
 
-`env:DB='https://your-firebase-prod-db.firebaseio.com'`
+`$env:KEY='./path_to_serviceAccount.json'`
+
+`$env:DB='https://your-firebase-prod-db.firebaseio.com'`
 
 `npm start`
 
