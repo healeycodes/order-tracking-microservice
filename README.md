@@ -59,7 +59,7 @@ Their tracking page will update without a refresh.
 
 ### Test
 
-`$env:KEY='./path_to_serviceAccount.json'`
+`$env:KEY='./path_to_serviceAccountKey.json'`
 
 `$env:DB='https://your-firebase-test-db.firebaseio.com'`
 
@@ -67,7 +67,7 @@ Their tracking page will update without a refresh.
 
 ### Run
 
-`$env:KEY='./path_to_serviceAccount.json'`
+`$env:KEY='./path_to_serviceAccountKey.json'`
 
 `$env:DB='https://your-firebase-prod-db.firebaseio.com'`
 
