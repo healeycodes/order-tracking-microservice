@@ -16,7 +16,7 @@ describe('GET /private/orders', () => {
                 assert(res.text.length > 0);
             })
             .expect(200, done);
-    })
+    });
 });
 
 /**
@@ -59,5 +59,5 @@ describe('GET /public/orders/:orderId', () => {
                     })
                     .expect(200, done);
             });
-    })
+    });
 });
